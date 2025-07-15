@@ -1,7 +1,7 @@
 <!DOCTYPE html>
     <html lang="en">
         <head>
-            <title>BeeSafe</title>
+            <title>TDSI</title>
             <meta charset="UTF-8">
             <meta name="viewport" content="width=device-width, initial-scale=1">
             <link rel="stylesheet" href="main.css">
@@ -35,7 +35,7 @@
     ?>
 
     <div class="header">
-        <h1>BeeSafe</h1>
+        <h1>TDSI</h1>
         <p>A website created by me.</p>
         <p><?php echo $content ?></p>
     </div>
