@@ -1,0 +1,55 @@
+****fichier named.conf****
+
+zone "beesafe.co" {
+    type master;
+    file "/etc/bind/directe";
+};
+
+zone "56.168.192.in-addr.arpa" {
+    type master;
+    file "/etc/bind/inverse";
+};
+
+
+****fichier de configuration zone Direct*****
+
+;
+; BIND data file for local loopback interface
+;
+$TTL    604800
+@       IN      SOA     srv.tdsi-ucad.co. root.tdsi-ucad.co. (
+                              2         ; Serial
+                         604800         ; Refresh
+                          86400         ; Retry
+                        2419200         ; Expire
+                         604800 )       ; Negative Cache TTL
+;
+@      IN  NS     srv.tdsi-ucad.co.
+www    IN  CNAME  beesafe.co.
+@      IN  A      192.168.240.128
+srv    IN  A      192.168.240.131
+srvweb IN  A      192.168.240.128
+srvbd  IN  A      192.168.240.132
+
+
+
+****fichier de configuration zone inverse*****
+
+;
+; BIND data file for local loopback interface
+;
+$TTL    604800
+@       IN      SOA     srv.tdsi-ucad.co. root.tdsi-ucad.co. (
+                              2         ; Serial
+                         604800         ; Refresh
+                          86400         ; Retry
+                        2419200         ; Expire
+                         604800 )       ; Negative Cache TTL
+;
+@   IN  NS   srv.tdsi-ucad.co.
+131 IN  PTR  dns.tdsi-ucad.co.
+132 IN  PTR  srvbd.tdsi-ucad.co.
+128 IN  PTR  tdsi-ucad.co.
+
+
+
